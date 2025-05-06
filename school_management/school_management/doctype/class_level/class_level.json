@@ -20,6 +20,7 @@
    "description": "Define arms like A, B, C or Red, Blue, Green.",
    "fieldname": "available_arms",
    "fieldtype": "Table",
+   "ignore_user_permissions": 1,
    "label": "Available Arms",
    "options": "Class Arm"
   }
@@ -27,7 +28,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-04 03:52:19.767809",
+ "modified": "2025-05-06 16:47:07.168348",
  "modified_by": "Administrator",
  "module": "School Management",
  "name": "Class Level",

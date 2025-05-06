@@ -6,30 +6,57 @@
  "engine": "InnoDB",
  "field_order": [
   "class_level",
-  "class_arm"
+  "class_arm",
+  "full_class_name",
+  "capacity",
+  "class_teacher"
  ],
  "fields": [
   {
    "fieldname": "class_level",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Class Level",
    "options": "Class Level",
-   "reqd": 1,
-   "on_change": "school_management.school_management.doctype.school_class.school_class.update_arm_options"
+   "reqd": 1
   },
   {
    "depends_on": "eval:doc.class_level;",
    "fieldname": "class_arm",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Class Arm",
    "options": "Class Arm"
+  },
+  {
+   "fieldname": "full_class_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Class Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "label": "Max Students",
+   "non_negative": 1
+  },
+  {
+   "description": "Select from HR Employees with 'Teacher' role",
+   "fieldname": "class_teacher",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Class Teacher",
+   "options": "Employee",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-04 03:30:22.028214",
+ "modified": "2025-05-06 22:28:40.920702",
  "modified_by": "Administrator",
  "module": "School Management",
  "name": "School Class",

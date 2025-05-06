@@ -1,0 +1,32 @@
+# school_management/install.py
+from frappe import _
+from frappe.custom.doctype.custom_field.custom_field import create_custom_field
+
+def after_install():
+    """Executes after app installation"""
+    add_teacher_field()
+    create_default_roles()
+    
+def add_teacher_field():
+    """Add is_teacher checkbox to Employee"""
+    if not frappe.db.exists("Custom Field", {"dt": "Employee", "fieldname": "is_teacher"}):
+        create_custom_field({
+            "dt": "Employee",
+            "label": "Is Teacher",
+            "fieldname": "is_teacher",
+            "fieldtype": "Check",
+            "insert_after": "employment_type",
+            "description": _("Identifies teaching staff"),
+            "default": 0
+        })
+        frappe.db.commit()  # Save changes immediately
+
+def create_default_roles():
+    """Create Teacher role if not exists"""
+    if not frappe.db.exists("Role", "Teacher"):
+        frappe.get_doc({
+            "doctype": "Role",
+            "role_name": "Teacher",
+            "desk_access": 1
+        }).insert()
+
