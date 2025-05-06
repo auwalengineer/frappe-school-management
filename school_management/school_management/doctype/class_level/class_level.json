@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:level_name",
  "creation": "2025-05-04 03:15:09.315629",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,7 +13,8 @@
   {
    "fieldname": "level_name",
    "fieldtype": "Data",
-   "label": "Level Name"
+   "label": "Level Name",
+   "unique": 1
   },
   {
    "description": "Define arms like A, B, C or Red, Blue, Green.",
@@ -25,10 +27,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-04 03:20:11.853889",
+ "modified": "2025-05-04 03:52:19.767809",
  "modified_by": "Administrator",
  "module": "School Management",
  "name": "Class Level",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
